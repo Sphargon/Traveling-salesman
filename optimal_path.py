@@ -1,5 +1,4 @@
 from random import sample, seed, random
-from ouais.results_manage import save_results
 from math import sqrt
 
 
@@ -17,7 +16,6 @@ def path_length(path:list[ list[ int,int ] ]) -> int:
 
 def random_path_finding(
         steps:list[ list[ int,int ] ],
-        Id:int = None,
         max_recurrence:int = 100 ) -> list:
     
     # start:int = randint(0, len(steps)-1)
@@ -33,18 +31,7 @@ def random_path_finding(
             best_path = new_path
             best_length = new_length
 
-    if not Id:
-        save_results(best_path, best_length)
-        
-        # specific_seed = 0
-        # for i in steps:
-        #     specific_seed += i[0]+i[1]
 
-        # seed(specific_seed)
-        # save_results(best_path, best_length, round(random()*10**10))
-
-    else:
-        save_results(best_path, best_length, Id)
 
 
 
